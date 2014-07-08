@@ -50,17 +50,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Application\CinemaTests\When_creating_a_cinema.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SilverScreen.Backend\SilverScreen.Backend.csproj">
-      <Project>{5e1537c8-183c-43a2-9396-5d758389f058}</Project>
-      <Name>SilverScreen.Backend</Name>
-    </ProjectReference>
     <ProjectReference Include="..\SilverScreen.Messages\SilverScreen.Messages.csproj">
       <Project>{b54c302a-121f-4333-9cba-2731b82de5e0}</Project>
       <Name>SilverScreen.Messages</Name>
@@ -69,6 +64,9 @@
       <Project>{5afbdf9f-6ba5-44f4-b743-e47a42934a44}</Project>
       <Name>SilverScreen</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Application\CinemaTests\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />

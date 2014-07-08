@@ -2,18 +2,43 @@
 
 namespace SilverScreen.Domain
 {
+    public interface IIdentity
+    {
+        string GetId();
+    }
+
+    public abstract class AbstractIdentity<TKey> : IIdentity
+    {
+        public abstract TKey Id { get; protected set; }
+
+        public string GetId()
+        {
+            return Id.ToString();
+        }
+    }
+
+    public sealed class CustomerId : AbstractIdentity<Guid>
+    {
+        public override Guid Id { get; protected set; }
+
+        public CustomerId(Guid id)
+        {
+            Id = id;
+        }
+    }
+
     public class Customer : AggregateBase<CustomerState>
     {
         public Customer(CustomerState state) : base(state) { }
 
-        private Customer(Guid id, string name, string adress)
+        private Customer(CustomerId id, string name, string adress)
         {
             Apply(new CustomerCreated(id, name, adress));
         }
 
         public static Customer Create(string name, string adress)
         {
-            return new Customer(Guid.NewGuid(), name, adress);
+            return new Customer(new CustomerId(Guid.NewGuid()), name, adress);
         }
         
         public void ChangeName(string name)
@@ -49,11 +74,11 @@ namespace SilverScreen.Domain
 
     public class CustomerCreated : IDomainEvent
     {
-        public Guid Id { get; private set; }
+        public CustomerId Id { get; private set; }
         public string Name { get; private set; }
         public string Adress { get; private set; }
 
-        public CustomerCreated(Guid id, string name, string adress)
+        public CustomerCreated(CustomerId id, string name, string adress)
         {
             Id = id;
             Name = name;

@@ -1,15 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilverScreen.Backend", "SilverScreen.Backend\SilverScreen.Backend.csproj", "{5E1537C8-183C-43A2-9396-5D758389F058}"
-EndProject
+# Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilverScreen", "SilverScreen\SilverScreen.csproj", "{5AFBDF9F-6BA5-44F4-B743-E47A42934A44}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SilverScreen.Tests", "SilverScreen.Tests\SilverScreen.Tests.csproj", "{2C63D921-406D-4139-8225-7568150F00E0}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Server", "Server", "{FE272C83-8E6B-42EA-9598-E4468AB6F421}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{3849374F-AEDD-4492-B790-0A8002444C21}"
 	ProjectSection(SolutionItems) = preProject
@@ -26,10 +20,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{5E1537C8-183C-43A2-9396-5D758389F058}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5E1537C8-183C-43A2-9396-5D758389F058}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5E1537C8-183C-43A2-9396-5D758389F058}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5E1537C8-183C-43A2-9396-5D758389F058}.Release|Any CPU.Build.0 = Release|Any CPU
 		{5AFBDF9F-6BA5-44F4-B743-E47A42934A44}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5AFBDF9F-6BA5-44F4-B743-E47A42934A44}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5AFBDF9F-6BA5-44F4-B743-E47A42934A44}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -45,8 +35,5 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(NestedProjects) = preSolution
-		{5E1537C8-183C-43A2-9396-5D758389F058} = {FE272C83-8E6B-42EA-9598-E4468AB6F421}
 	EndGlobalSection
 EndGlobal
