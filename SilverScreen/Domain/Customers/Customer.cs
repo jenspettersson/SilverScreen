@@ -6,6 +6,11 @@ namespace SilverScreen.Domain.Customers
     {
         public Customer(CustomerState state) : base(state) { }
 
+        public Customer()
+        {
+            
+        }
+
         private Customer(CustomerId id, string name, string address)
         {
             Apply(new CustomerCreated(id, name, address));

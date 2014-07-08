@@ -1,5 +1,6 @@
 ﻿using SilverScreen.Domain;
 using SilverScreen.Domain.Customers;
+using SilverScreen.Infrastructure;
 using Xunit;
 
 namespace SilverScreen.Tests.Domain
@@ -11,7 +12,14 @@ namespace SilverScreen.Tests.Domain
         {
             var customer = Customer.Create("Customer Name", "Adress");
 
-            var uncommittedEvents = customer.GetUncommittedEvents();
+
+            var repository = new Repository<Customer>(new InMemoryEventStore());
+
+            repository.Save(customer);
+
+
+            var reconstructed = repository.GetById(customer.Id);
+
         }
     }
 }
