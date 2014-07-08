@@ -1,12 +1,20 @@
+<<<<<<< HEAD
 ﻿using System.Collections.Generic;
+=======
+﻿using System;
+using System.Collections.Generic;
 using SilverScreen.Domain;
+>>>>>>> Added super simple in memory event store
 
 namespace SilverScreen
 {
     public abstract class AggregateBase<TState> : IAggregate where TState : IState, new()
     {
-        public IIdentity Id { get { return State.Id; } }
+<<<<<<< HEAD
+=======
+        public Guid Id { get { return State.Id; } }
 
+>>>>>>> Added super simple in memory event store
         public IEnumerable<IDomainEvent> GetUncommittedEvents()
         {
             return _changes;

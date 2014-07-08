@@ -7,6 +7,7 @@ namespace SilverScreen.Domain.Customers
 
         public void When(CustomerCreated evt)
         {
+            Id = evt.Id;
             Name = evt.Name;
             Address = evt.Adress;
         }

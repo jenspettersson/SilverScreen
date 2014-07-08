@@ -1,4 +1,5 @@
 ﻿using System;
+using SilverScreen.Domain;
 
 namespace SilverScreen.Infrastructure
 {
@@ -16,7 +17,7 @@ namespace SilverScreen.Infrastructure
             _store.SaveEvents(aggregate.Id, aggregate.GetUncommittedEvents());
         }
 
-        public T GetById(Guid id)
+        public T GetById(IIdentity id)
         {
             var events = _store.GetEventsByAggregateId(id);
             var obj = new T();
@@ -30,6 +31,6 @@ namespace SilverScreen.Infrastructure
     public interface IRepository<T>
     {
         void Save(T aggregate);
-        T GetById(Guid id);
+        T GetById(IIdentity id);
     }
 }

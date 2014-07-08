@@ -1,11 +1,15 @@
+<<<<<<< HEAD
 ﻿using System.Collections.Generic;
+=======
+﻿using System;
+using System.Collections.Generic;
 using SilverScreen.Domain;
+>>>>>>> Added super simple in memory event store
 
 namespace SilverScreen
 {
     public interface IAggregate
     {
-        IIdentity Id { get; }
         IEnumerable<IDomainEvent> GetUncommittedEvents();
         void Clear();
         void ReconstructFromHistory(IEnumerable<IDomainEvent> events);

@@ -1,18 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using SilverScreen.Domain;
 
 namespace SilverScreen.Infrastructure
 {
     public interface IEventStore
     {
-        void SaveEvents(Guid id, IEnumerable<IDomainEvent> events);
-        IEnumerable<IDomainEvent> GetEventsByAggregateId(Guid id);
+        void SaveEvents(IIdentity id, IEnumerable<IDomainEvent> events);
+        IEnumerable<IDomainEvent> GetEventsByAggregateId(IIdentity id);
     }
 
     public static class MemoryStore
     {
-        private static readonly IDictionary<Guid, List<IDomainEvent>> Events = new Dictionary<Guid, List<IDomainEvent>>();
-        public static void Put(Guid id, IEnumerable<IDomainEvent> events)
+        private static readonly IDictionary<IIdentity, List<IDomainEvent>> Events = new Dictionary<IIdentity, List<IDomainEvent>>();
+        public static void Put(IIdentity id, IEnumerable<IDomainEvent> events)
         {
             List<IDomainEvent> storedEvents;
             if(Events.ContainsKey(id))
@@ -26,7 +27,7 @@ namespace SilverScreen.Infrastructure
             storedEvents.AddRange(events);
         }
 
-        public static IEnumerable<IDomainEvent> Get(Guid id)
+        public static IEnumerable<IDomainEvent> Get(IIdentity id)
         {
             if (Events.ContainsKey(id))
                 return Events[id];
@@ -36,12 +37,12 @@ namespace SilverScreen.Infrastructure
     }
     public class InMemoryEventStore : IEventStore
     {
-        public void SaveEvents(Guid id, IEnumerable<IDomainEvent> events)
+        public void SaveEvents(IIdentity id, IEnumerable<IDomainEvent> events)
         {
             MemoryStore.Put(id, events);
         }
 
-        public IEnumerable<IDomainEvent> GetEventsByAggregateId(Guid id)
+        public IEnumerable<IDomainEvent> GetEventsByAggregateId(IIdentity id)
         {
             return MemoryStore.Get(id);
         }
