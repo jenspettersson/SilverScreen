@@ -1,6 +1,4 @@
-using System;
 using System.Collections.Generic;
-using SilverScreen.Domain;
 
 namespace SilverScreen
 {
@@ -17,8 +15,6 @@ namespace SilverScreen
 			    Mutate(evt);
 		    }
 	    }
-
-	    public IIdentity Id { get; private set; }
 
 	    public void Mutate(IDomainEvent evt)
         {
