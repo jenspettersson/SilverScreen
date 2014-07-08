@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace SilverScreen.Domain.BookableShow
+namespace SilverScreen.Domain.BookableShows
 {
 	public class BookableShowState : State
 	{

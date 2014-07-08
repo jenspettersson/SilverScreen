@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace SilverScreen.Domain
+namespace SilverScreen.Domain.Screens
 {
 	public class Screen
 	{

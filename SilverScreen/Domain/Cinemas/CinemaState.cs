@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
+using SilverScreen.Domain.Screens;
 
-namespace SilverScreen.Domain.Cinema
+namespace SilverScreen.Domain.Cinemas
 {
 	public class CinemaState : State
 	{

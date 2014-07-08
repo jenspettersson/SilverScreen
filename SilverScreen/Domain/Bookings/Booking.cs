@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace SilverScreen.Domain.Booking
+namespace SilverScreen.Domain.Bookings
 {
 	public class Booking : AggregateBase<BookingState>
 	{

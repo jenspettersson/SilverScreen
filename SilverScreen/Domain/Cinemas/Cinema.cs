@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SilverScreen.Domain.Cinema
+namespace SilverScreen.Domain.Cinemas
 {
 	public class Cinema : AggregateBase<CinemaState>
 	{

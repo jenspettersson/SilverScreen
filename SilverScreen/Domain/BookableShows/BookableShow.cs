@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace SilverScreen.Domain.BookableShow
+namespace SilverScreen.Domain.BookableShows
 {
 	public class BookableShow : AggregateBase<BookableShowState>
 	{

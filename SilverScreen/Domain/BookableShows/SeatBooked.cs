@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace SilverScreen.Domain.BookableShow
+namespace SilverScreen.Domain.BookableShows
 {
 	public class SeatBooked : IDomainEvent
 	{

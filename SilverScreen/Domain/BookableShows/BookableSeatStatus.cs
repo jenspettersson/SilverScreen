@@ -1,4 +1,4 @@
-﻿namespace SilverScreen.Domain.BookableShow
+﻿namespace SilverScreen.Domain.BookableShows
 {
 	public enum BookableSeatStatus
 	{
