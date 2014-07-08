@@ -2,11 +2,11 @@ namespace SilverScreen.Domain.Customers
 {
     public class CustomerRelocated : IDomainEvent
     {
-        public string Adress { get; private set; }
+        public string Address { get; private set; }
 
-        public CustomerRelocated(string adress)
+        public CustomerRelocated(string address)
         {
-            Adress = adress;
+            Address = address;
         }
     }
 }

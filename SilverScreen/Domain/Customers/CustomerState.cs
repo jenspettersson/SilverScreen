@@ -18,7 +18,7 @@ namespace SilverScreen.Domain.Customers
 
         public void When(CustomerRelocated evt)
         {
-            Address = evt.Adress;
+            Address = evt.Address;
         }
     }
 }

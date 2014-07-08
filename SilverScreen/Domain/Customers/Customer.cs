@@ -6,9 +6,9 @@ namespace SilverScreen.Domain.Customers
     {
         public Customer(CustomerState state) : base(state) { }
 
-        private Customer(CustomerId id, string name, string adress)
+        private Customer(CustomerId id, string name, string address)
         {
-            Apply(new CustomerCreated(id, name, adress));
+            Apply(new CustomerCreated(id, name, address));
         }
 
         public static Customer Create(string name, string address)
@@ -21,9 +21,9 @@ namespace SilverScreen.Domain.Customers
             Apply(new CustomerNameChanged(name));
         }
 
-        public void Relocated(string adress)
+        public void Relocated(string address)
         {
-            Apply(new CustomerRelocated(adress));
+            Apply(new CustomerRelocated(address));
         }
     }
 }
