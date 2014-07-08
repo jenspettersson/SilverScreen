@@ -56,10 +56,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SilverScreen.Messages\SilverScreen.Messages.csproj">
-      <Project>{b54c302a-121f-4333-9cba-2731b82de5e0}</Project>
-      <Name>SilverScreen.Messages</Name>
-    </ProjectReference>
     <ProjectReference Include="..\SilverScreen\SilverScreen.csproj">
       <Project>{5afbdf9f-6ba5-44f4-b743-e47a42934a44}</Project>
       <Name>SilverScreen</Name>
