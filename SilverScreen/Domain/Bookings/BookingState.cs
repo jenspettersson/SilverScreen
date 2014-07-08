@@ -1,11 +1,14 @@
 using System;
 using System.Collections.Generic;
+using SilverScreen.Domain.BookableShows;
 
 namespace SilverScreen.Domain.Bookings
 {
 	public class BookingState : State
 	{
-		public Guid BookableShowId { get; set; }
+		public BookingId Id { get; set; }
+		
+		public BookableShowId BookableShowId { get; set; }
 
 		public List<Seat> BookedSeats { get; set; }
 		

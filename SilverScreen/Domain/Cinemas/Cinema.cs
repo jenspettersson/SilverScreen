@@ -6,14 +6,14 @@ namespace SilverScreen.Domain.Cinemas
 	{
 		public Cinema(CinemaState state) : base(state) { }
 
-		private Cinema(Guid id, string name)
+		private Cinema(CinemaId id, string name)
         {
             Apply(new CinemaAdded(id, name));
         }
 
 		public static Cinema Add(string name)
         {
-			return new Cinema(Guid.NewGuid(), name);
+			return new Cinema(new CinemaId(Guid.NewGuid().ToString()), name);
         }
 	}
 }

@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using SilverScreen.Domain.Screens;
 
 namespace SilverScreen.Domain.BookableShows
 {
 	public class BookableShowState : State
 	{
-		public Guid ScreenId { get; set; }
+		public BookableShowId BookableShowId { get; set; }
+
+		public ScreenId ScreenId { get; set; }
 
 		public DateTime ShowTime { get; set; }
 
@@ -14,7 +17,7 @@ namespace SilverScreen.Domain.BookableShows
 
 		public void When(BookableShowCreated evt)
 		{
-			Id = evt.Id;
+			BookableShowId = evt.Id;
 			ScreenId = evt.ScreenId;
 			ShowTime = evt.ShowTime;
 			Seats = evt.Seats;

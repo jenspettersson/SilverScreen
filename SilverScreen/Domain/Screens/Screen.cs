@@ -7,6 +7,8 @@ namespace SilverScreen.Domain.Screens
 	{
 		private readonly List<DateTime> _showTimes = new List<DateTime>();
 
+		public ScreenId ScreenId { get; private set; }
+
 		public IEnumerable<DateTime> ShowTimes
 		{
 			get { return _showTimes; }

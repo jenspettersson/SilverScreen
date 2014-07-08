@@ -1,14 +1,12 @@
-﻿using System;
-
-namespace SilverScreen.Domain.Cinemas
+﻿namespace SilverScreen.Domain.Cinemas
 {
 	public class CinemaAdded : IDomainEvent
 	{
-		public Guid Id { get; private set; }
+		public CinemaId Id { get; private set; }
 
 		public string Name { get; private set; }
 
-		public CinemaAdded(Guid id, string name)
+		public CinemaAdded(CinemaId id, string name)
 		{
 			Id = id;
 			Name = name;

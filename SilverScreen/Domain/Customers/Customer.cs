@@ -13,7 +13,7 @@ namespace SilverScreen.Domain.Customers
 
         public static Customer Create(string name, string address)
         {
-            return new Customer(new CustomerId(Guid.NewGuid()), name, address);
+            return new Customer(new CustomerId(Guid.NewGuid().ToString()), name, address);
         }
         
         public void ChangeName(string name)

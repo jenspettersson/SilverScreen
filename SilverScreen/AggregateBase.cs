@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 
 namespace SilverScreen
 {
     public abstract class AggregateBase<TState> : IAggregate where TState : IState, new()
     {
-        public Guid Id { get { return State.Id; } }
         public IEnumerable<IDomainEvent> GetUncommittedEvents()
         {
             return _changes;

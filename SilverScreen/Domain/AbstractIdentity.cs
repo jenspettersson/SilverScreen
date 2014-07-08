@@ -1,5 +1,3 @@
-using SilverScreen.Domain.Customers;
-
 namespace SilverScreen.Domain
 {
     public abstract class AbstractIdentity<TKey> : IIdentity

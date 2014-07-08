@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using SilverScreen.Domain.Screens;
 
 namespace SilverScreen.Domain.BookableShows
 {
@@ -7,29 +8,29 @@ namespace SilverScreen.Domain.BookableShows
 	{
 		public BookableShow(BookableShowState state) : base(state) { }
 
-		private BookableShow(Guid id, Guid screenId, DateTime showTime, List<BookableSeat> seats)
+		private BookableShow(BookableShowId id, ScreenId screenId, DateTime showTime, List<BookableSeat> seats)
 		{
 			Apply(new BookableShowCreated(id, screenId, showTime, seats));
 		}
 
-		public static BookableShow Create(Guid id, Guid screenId, DateTime showTime, List<BookableSeat> seats)
+		public static BookableShow Create(ScreenId screenId, DateTime showTime, List<BookableSeat> seats)
 		{
-			return new BookableShow(Guid.NewGuid(), screenId, showTime, seats);
+			return new BookableShow(new BookableShowId(Guid.NewGuid().ToString()), screenId, showTime, seats);
 		}
 
-		public void MakeSeatAvailable(Guid seatId)
+		public void MakeSeatAvailable(BookableSeatId seatId)
 		{
-			Apply(new SeatMadeAvailable(Id, seatId));
+			Apply(new SeatMadeAvailable(State.BookableShowId, seatId));
 		}
 
-		public void ReserveSeat(Guid seatId)
+		public void ReserveSeat(BookableSeatId seatId)
 		{
-			Apply(new SeatReserved(Id, seatId));
+			Apply(new SeatReserved(State.BookableShowId, seatId));
 		}
 
-		public void BookSeat(Guid seatId)
+		public void BookSeat(BookableSeatId seatId)
 		{
-			Apply(new SeatBooked(Id, seatId));
+			Apply(new SeatBooked(State.BookableShowId, seatId));
 		}
 	}
 }

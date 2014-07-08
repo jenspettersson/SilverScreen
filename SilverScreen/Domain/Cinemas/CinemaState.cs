@@ -5,6 +5,8 @@ namespace SilverScreen.Domain.Cinemas
 {
 	public class CinemaState : State
 	{
+		public CinemaId Id { get; set; } 
+
 		public string Name { get; set; }
 
 		public List<Screen> Screens { get; set; }

@@ -1,13 +1,11 @@
-﻿using System;
-
-namespace SilverScreen.Domain.BookableShows
+﻿namespace SilverScreen.Domain.BookableShows
 {
 	public class SeatReserved : IDomainEvent
 	{
-		public Guid BookableShowId { get; private set; }
-		public Guid SeatId { get; private set; }
+		public BookableShowId BookableShowId { get; private set; }
+		public BookableSeatId SeatId { get; private set; }
 
-		public SeatReserved(Guid bookableShowId, Guid seatId)
+		public SeatReserved(BookableShowId bookableShowId, BookableSeatId seatId)
 		{
 			BookableShowId = bookableShowId;
 			SeatId = seatId;

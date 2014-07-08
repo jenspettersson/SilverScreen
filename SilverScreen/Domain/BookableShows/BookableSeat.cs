@@ -4,7 +4,7 @@ namespace SilverScreen.Domain.BookableShows
 {
 	public class BookableSeat
 	{
-		public Guid Id { get; private set; }
+		public BookableSeatId Id { get; private set; }
 
 		public int RowNumber { get; private set; }
 
@@ -14,7 +14,7 @@ namespace SilverScreen.Domain.BookableShows
 
 		public BookableSeat()
 		{
-			Id = Guid.NewGuid();
+			Id = new BookableSeatId(Guid.NewGuid().ToString());
 		}
 	}
 }

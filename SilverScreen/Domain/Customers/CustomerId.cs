@@ -1,12 +1,10 @@
-using System;
-
 namespace SilverScreen.Domain.Customers
 {
-    public sealed class CustomerId : AbstractIdentity<Guid>
+    public sealed class CustomerId : AbstractIdentity<string>
     {
-        public override Guid Id { get; protected set; }
+        public override string Id { get; protected set; }
 
-        public CustomerId(Guid id)
+        public CustomerId(string id)
         {
             Id = id;
         }
